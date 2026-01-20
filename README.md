@@ -27,28 +27,31 @@ Z-Image doesn't have "Input" or "Output" blocks. Instead, it uses a flat stack o
 
 * **The Foundation:** Where random noise first meets your prompt.
 - Crank this up to force the model to stick rigidly to your prompt's layout. Lower it for more creative drift.
-
-![Arthemy Tuner ZIT Interface](assets/STAGE 1 - Semantic Seeding.webp)
+![Stage 1 Semantic Seeding](assets/STAGE%201%20-%20Semantic%20Seeding.webp)
 
 ### STAGE 2: Spatial Layout (Layers 6-11)
 
 * **The Blueprint:** Defines masses, object positioning, and depth.
 - Adjust where subjects are placed and their overall "weight" in the scene.
+![Stage 2 Spatial Layout](assets/STAGE%202%20-%20Spatial%20Layout.webp)
 
 ### STAGE 3: Morphological Form (Layers 12-17)
 
 * **The Skeleton:** Resolves object boundaries and limb coherence.
 - High values separate objects clearly; low values create "dream-like" blending.
+![Stage 3 Morphological Form](assets/STAGE%203%20-%20Morphological%20Form.webp)
 
 ### STAGE 4: Volumetric Lighting (Layers 18-23)
 
 * **The Atmosphere:** Handles 3D depth, shading, and lighting mood.
 - Influence the contrast and "feel" of the environment.
+![Stage 4 Volumetric Lighting](assets/STAGE%204%20-%20Volumetric%20Lighting.webp)
 
 ### STAGE 5: Surface Refinement (Layers 24-29)
 
 * **The Detailer:** "Hallucinates" micro-details like skin pores and fabric weave.
 - Crank it for ultra-sharp textures; lower it for a soft, painterly look.
+![Stage 5 Surface Refinements](assets/STAGE%205%20-%20Surface%20Refinements.webp)
 
 ---
 
@@ -57,14 +60,23 @@ Z-Image doesn't have "Input" or "Output" blocks. Instead, it uses a flat stack o
 Z-Image uses **Qwen3-4B**, a 36-layer LLM, as its text encoder. This node lets you adjust how the model "thinks" about your prompt:
 
 * **Syntax Parsing**: Controls how strictly the AI follows your grammar and word order.
+![LLM Syntax Parsing](assets/LLM%20-%20Syntax%20Parsing.webp)
+
 * **Literal Meaning**: Controls the direct association between words and objects.
+![LLM Literal Meaning](assets/LLM%20-%20Literal%20Meaning.webp)
+
 * **Contextual Web**: Manages the relationships and interactions between subjects.
+ ![LLM Contextual Web](assets/LLM%20-%20Contextual%20Web.webp)
+
 * **Abstract Concept**: Controls the overall artistic style and subtext interpretation.
+![LLM Abstract Concept](assets/LLM%20-%20Abstract%20Concept.webp)
 
 ---
 
 ## ⚗️ Arthemy Live Tuner - Z-Image  (LAB version)
 
+BUT WAIT, there's more!
+![LLM Abstract Concept](assets/LAB-ArthemyLiveTunerZIT.webp)
 The Lab version of these models keep the same nomenclature of the standard version, in order to help you identify to what group each layer has been assigned to, but it exposes all the layers of both the Model and Qwen to give you complete granular control.
 If you're one of those people that want to help me understand what's inside each slice in order to make these tools more reliable and effective... you're welcome to delve into this version.
 
