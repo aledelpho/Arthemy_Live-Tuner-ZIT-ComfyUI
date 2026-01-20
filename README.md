@@ -2,6 +2,7 @@
 
 Advanced real-time control for **Z-Image** (S3-DiT) models and **Qwen3-4B** Text Encoders. These nodes perform "live surgery" on your model's weights to boost or lower specific generative phases without any training.
 
+![Arthemy Tuner ZIT Interface](assets/Presentation-ArthemyLiveTunerZIT.webp)
 ---
 
 # ✨ Arthemy Live Tuner - Z-Image (standard version)
