@@ -27,6 +27,7 @@ Z-Image doesn't have "Input" or "Output" blocks. Instead, it uses a flat stack o
 
 * **The Foundation:** Where random noise first meets your prompt.
 - Crank this up to force the model to stick rigidly to your prompt's layout. Lower it for more creative drift.
+![Arthemy Tuner ZIT Interface](assets/STAGE 1 - Semantic Seeding.webp)
 
 ### STAGE 2: Spatial Layout (Layers 6-11)
 
