@@ -11,7 +11,7 @@ Hi everyone!
 I developed these nodes to slice the monolithic **S3-DiT** of **Z-Image** to give you more control over different slices of both the Model and Text Encoder.
 This transform your **Z-Image** checkpoint into a set of "Sliders," allowing you to tweak composition, lighting, or micro-details in real-time.
 
-We can finally **play with the models**!
+You can finally **play with the models**!
 
 *Work in Progress: Please keep in mind that the boundaries for these functional blocks are experimental. Since Z-Image is a single-stream architecture... it's quite chaotic.
 If you find that a specific slider affects something different than described, let me know! Your feedback helps refine this mapping for everyone.*
