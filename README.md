@@ -14,7 +14,7 @@ This transform your **Z-Image** checkpoint into a set of "Sliders," allowing you
 You can finally **play with the models**!
 
 *Work in Progress: Please keep in mind that the boundaries for these functional blocks are experimental. Since Z-Image is a single-stream architecture... it's quite chaotic.
-If you find that a specific slider affects something different than described, let me know! Your feedback helps refine this mapping for everyone.*
+If you want more freedom and help us all understand what's really inside each slice of Z-image and Qwen, feel free to play with the "LAB" version, where you can control every layer indipendently.*
 
 ---
 
