@@ -3,7 +3,7 @@ import re
 
 class ArthemyQwenLiveTunerZImageLab:
     """
-    ✨ Arthemy Qwen Tuner (Z-Image Lab Version)
+    ⚗️ Arthemy Qwen Tuner (Z-Image Lab Version)
     
     Architecture: Qwen3-4B Transformer (36 Layers)
     Technique: Non-destructive Patching via comfy.sd.
@@ -116,4 +116,5 @@ class ArthemyQwenLiveTunerZImageLab:
         return (clip_out, info, )
 
 NODE_CLASS_MAPPINGS = {"ArthemyQwenLiveTunerZImageLab": ArthemyQwenLiveTunerZImageLab}
+
 NODE_DISPLAY_NAME_MAPPINGS = {"ArthemyQwenLiveTunerZImageLab": "✨ Arthemy Qwen Tuner (Z-Image Lab)"}
