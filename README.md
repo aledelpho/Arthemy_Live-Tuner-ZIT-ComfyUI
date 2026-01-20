@@ -18,6 +18,10 @@ You can finally **play with the models**!
 If you want more freedom and help us all understand what's really inside each slice of Z-image and Qwen, feel free to play with the "LAB" version, where you can control every layer indipendently.*
 
 ---
+```
+Prompt for the examples: 
+An oil painting in a first-person perspective, looking down at a slender, amethyst-purple hand with elegant black nails. The hand holds a jagged shard of a broken mirror, reflecting the face of a dark elf princess with glowing eyes, a sheer white veil, and obsidian horns. The background is a busy, dimly lit tavern with warm, golden light filtering through smoke, filled with diverse fantasy characters and blurred, bustling figures. The brushstrokes are visible, giving the image a rich, textured, old-world feel.
+```
 
 ## Model Tuner: The 5 Generative Stages
 
