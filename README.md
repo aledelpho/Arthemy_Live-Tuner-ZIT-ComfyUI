@@ -8,12 +8,12 @@ Advanced real-time control for **Z-Image** (S3-DiT) models and **Qwen3-4B** Text
 
 Hi everyone!
 
-**Z-Image** uses a monolithic **S3-DiT** (
+I developed these nodes to slice the monolithic **S3-DiT** of **Z-Image** to give you more control over different slices of both the Model and Text Encoder.
+This transform your **Z-Image** checkpoint into a set of "Sliders," allowing you to tweak composition, lighting, or micro-details in real-time.
 
-I developed these nodes slice the monolithic **S3-DiT** of **Z-Image** to give you complete control over different slices of the Model and Text Encoder.
-This transform your Z-Image checkpoint into a set of "Sliders," allowing you to tweak composition, lighting, or micro-details in real-time.
+We can finally **play with the models**!
 
-*Work in Progress: Please keep in mind that the boundaries for these functional blocks are experimental. Since Z-Image is a single-stream architecture... it's quite chaotic to dissect.
+*Work in Progress: Please keep in mind that the boundaries for these functional blocks are experimental. Since Z-Image is a single-stream architecture... it's quite chaotic.
 If you find that a specific slider affects something different than described, let me know! Your feedback helps refine this mapping for everyone.*
 
 ---
@@ -25,27 +25,27 @@ Z-Image doesn't have "Input" or "Output" blocks. Instead, it uses a flat stack o
 ### STAGE 1: Semantic Seeding (Layers 0-5)
 
 * **The Foundation:** Where random noise first meets your prompt.
-* **The Slider:** Crank this up to force the model to stick rigidly to your prompt's layout. Lower it for more creative drift.
+- Crank this up to force the model to stick rigidly to your prompt's layout. Lower it for more creative drift.
 
 ### STAGE 2: Spatial Layout (Layers 6-11)
 
 * **The Blueprint:** Defines masses, object positioning, and depth.
-* **The Slider:** Adjust where subjects are placed and their overall "weight" in the scene.
+- Adjust where subjects are placed and their overall "weight" in the scene.
 
 ### STAGE 3: Morphological Form (Layers 12-17)
 
 * **The Skeleton:** Resolves object boundaries and limb coherence.
-* **The Slider:** High values separate objects clearly; low values create "dream-like" blending.
+- High values separate objects clearly; low values create "dream-like" blending.
 
 ### STAGE 4: Volumetric Lighting (Layers 18-23)
 
 * **The Atmosphere:** Handles 3D depth, shading, and lighting mood.
-* **The Slider:** Influence the contrast and "feel" of the environment.
+- Influence the contrast and "feel" of the environment.
 
 ### STAGE 5: Surface Refinement (Layers 24-29)
 
 * **The Detailer:** "Hallucinates" micro-details like skin pores and fabric weave.
-* **The Slider:** Crank it for ultra-sharp textures; lower it for a soft, painterly look.
+- Crank it for ultra-sharp textures; lower it for a soft, painterly look.
 
 ---
 
