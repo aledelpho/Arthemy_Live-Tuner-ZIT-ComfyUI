@@ -4,7 +4,7 @@ Advanced real-time control for **Z-Image** (S3-DiT) models and **Qwen3-4B** Text
 
 ---
 
-# ✨⚗️ Arthemy Live Tuner - Z-Image
+# ✨ Arthemy Live Tuner - Z-Image (standard version)
 
 Hi everyone!
 
@@ -60,7 +60,7 @@ Z-Image uses **Qwen3-4B**, a 36-layer LLM, as its text encoder. This node lets y
 
 ---
 
-# ⚗️ Arthemy Live Tuner - Z-Image **LAB**
+# ⚗️ Arthemy Live Tuner - Z-Image  (LAB version)
 
 The Lab version of these models keep the same nomenclature of the standard version, in order to help you identify to what group each layer has been assigned to, but it exposes all the layers of both the Model and Qwen to give you complete granular control.
 If you're one of those people that want to help me understand what's inside each slice in order to make these tools more reliable and effective... you're welcome to delve into this version.
