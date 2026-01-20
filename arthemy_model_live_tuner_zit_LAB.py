@@ -3,7 +3,7 @@ import torch.nn as nn
 
 class ArthemyLiveModelTunerZImageLab:
     """
-    ✨ Arthemy Model Tuner (Z-Image Lab Version)
+    ⚗️ Arthemy Model Tuner (Z-Image Lab Version)
     
     Architecture: S3-DiT (Scalable Single-Stream Diffusion Transformer)
     Technique: Per-Layer Weight Injection with Auto-Restore safeguards.
@@ -164,4 +164,5 @@ class ArthemyLiveModelTunerZImageLab:
         return (model, info, )
 
 NODE_CLASS_MAPPINGS = {"ArthemyLiveModelTunerZImageLab": ArthemyLiveModelTunerZImageLab}
+
 NODE_DISPLAY_NAME_MAPPINGS = {"ArthemyLiveModelTunerZImageLab": "✨ Arthemy Model Tuner (Z-Image Lab)"}
