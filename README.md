@@ -9,8 +9,6 @@ The nodes have been completely reworked in order to solve many... many issues. N
 
 ![Arthemy Tuner ZIT Interface](assets/ArthemytunerPresentation.webp)
 
----
-
 Hi everyone!
 
 I developed these nodes to slice the monolithic **S3-DiT** of **Z-Image** to give you more control over different slices of both the Model and Text Encoder.
@@ -22,6 +20,7 @@ You can finally **play with the models**!
 If you want more freedom and help us all understand what's really inside each slice of Z-image and Qwen, feel free to play with the "LAB" version, where you can control every layer indipendently.*
 
 ---
+
 ```
 Prompt for the examples: 
 American comic book art, Western illustration style, highly detailed, dynamic line work. A powerful female elf standing in a dynamic pose, raising one arm high towards the sky. Her hand is encased in a bulky, complex mechanical gauntlet that crackles with arcs of blue electricity. She wears a sharp, fitted black uniform adorned with a thick, luxurious fur collar. Her vibrant green hair is styled with a heavy side-sweep that completely covers one eye. Small, delicate antlers frame the sides of her head. The perspective is a dramatic low angle looking up, emphasizing her dominance and the height of her reach. The background places her in the center of a cobblestone medieval square, but the low angle highlights a brilliant, clear summer sky dotted with fluffy white clouds behind her. The lighting is bright and natural sunlight, accented by the intense glow of the electrical sparks. The image conveys a strong sense of movement, with wind blowing through her hair and the surging energy of the gauntlet.
