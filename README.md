@@ -52,7 +52,7 @@ Instead of affecting layers, you can scale specific internal mechanisms across t
 * **Global Attention:** Scales the Attention mechanisms. This impacts how the model relates different parts of the image to each other.
 * ![Arthemy Tuner ZIT Interface](assets/Global_attention.jpg)
 * **Global MLP:** Scales the Feed-Forward networks. This impacts the processing power of the individual nodes.
-* ![Arthemy Tuner ZIT Interface](Global_Mlp.jpg)
+* ![Arthemy Tuner ZIT Interface](assets/Global_Mlp.jpg)
 
 **C. Auxiliary Models**
 These controls target weights that exist outside the main 30-layer stack:
