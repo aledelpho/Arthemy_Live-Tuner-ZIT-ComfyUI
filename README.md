@@ -27,7 +27,7 @@ Prompt for the examples:
 An oil painting in a first-person perspective, looking down at a slender, amethyst-purple hand with elegant black nails. The hand holds a jagged shard of a broken mirror, reflecting the face of a dark elf princess with glowing eyes, a sheer white veil, and obsidian horns. The background is a busy, dimly lit tavern with warm, golden light filtering through smoke, filled with diverse fantasy characters and blurred, bustling figures. The brushstrokes are visible, giving the image a rich, textured, old-world feel.
 ```
 
-## 1. Z-Image Tuner (Simple)
+## 🧪 Z-Image Tuner (Simple)
 
 The 30 layers of the model are divided into **6 Positional Blocks** (5 layers per block), plus controls for the auxiliary components that wrap around the main transformer.
 
@@ -59,7 +59,7 @@ These controls target weights that exist outside the main 30-layer stack:
 * 
 ---
 
-## 2. Qwen Tuner (Simple)
+## 🧪 Qwen Tuner (Simple)
 
 The Qwen3-4B text encoder has 36 layers. The v2.0 Tuner organizes these into **6 Semantic Zones** (6 layers per zone), moving from raw embedding to abstract reasoning.
 
