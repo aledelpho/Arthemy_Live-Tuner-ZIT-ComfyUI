@@ -7,7 +7,7 @@ UPDATE 2.0.0
 The nodes have been completely reworked in order to solve many... many issues. Now they works as intended and you can also save your tuned z-image models and text-encoders.
 ```
 
-![Arthemy Tuner ZIT Interface](assets/Presentation-ArthemyLiveTunerZIT.webp)
+![Arthemy Tuner ZIT Interface](assets/ArthemytunerPresentation.webp)
 
 ---
 
@@ -24,7 +24,7 @@ If you want more freedom and help us all understand what's really inside each sl
 ---
 ```
 Prompt for the examples: 
-An oil painting in a first-person perspective, looking down at a slender, amethyst-purple hand with elegant black nails. The hand holds a jagged shard of a broken mirror, reflecting the face of a dark elf princess with glowing eyes, a sheer white veil, and obsidian horns. The background is a busy, dimly lit tavern with warm, golden light filtering through smoke, filled with diverse fantasy characters and blurred, bustling figures. The brushstrokes are visible, giving the image a rich, textured, old-world feel.
+American comic book art, Western illustration style, highly detailed, dynamic line work. A powerful female elf standing in a dynamic pose, raising one arm high towards the sky. Her hand is encased in a bulky, complex mechanical gauntlet that crackles with arcs of blue electricity. She wears a sharp, fitted black uniform adorned with a thick, luxurious fur collar. Her vibrant green hair is styled with a heavy side-sweep that completely covers one eye. Small, delicate antlers frame the sides of her head. The perspective is a dramatic low angle looking up, emphasizing her dominance and the height of her reach. The background places her in the center of a cobblestone medieval square, but the low angle highlights a brilliant, clear summer sky dotted with fluffy white clouds behind her. The lighting is bright and natural sunlight, accented by the intense glow of the electrical sparks. The image conveys a strong sense of movement, with wind blowing through her hair and the surging energy of the gauntlet.
 ```
 
 ## 🧪 Z-Image Tuner (Simple)
@@ -48,7 +48,7 @@ You can push or pull the weights of these blocks relative to the `base_strength`
 ![Arthemy Tuner ZIT Interface](assets/Block_6_end.jpg)
 
 **B. Global Components**
-Instead of affecting layers blindly, you can scale specific internal mechanisms across the entire model:
+Instead of affecting layers, you can scale specific internal mechanisms across the entire model:
 
 * **Global Attention:** Scales the Attention mechanisms. This impacts how the model relates different parts of the image to each other.
 * ![Arthemy Tuner ZIT Interface](assets/Global_attention.jpg)
@@ -90,9 +90,12 @@ Adjusting these allows you to influence how strictly the model adheres to gramma
 
 ---
 
+But wait, there's more:
+![Arthemy Tuner ZIT Interface](FeaturesPresentation.webp)
+
 ## ⚗️ Arthemy LAB Versions
 
-For those who want to look under the hood.
+For those curious **_FREAKS_** that want to look under the hood and customize their model with complete control:
 
 The **LAB** versions of these nodes discard the groupings entirely. They expose:
 
@@ -106,10 +109,6 @@ This is intended for research and fine-tuning. If you want to discover exactly w
 ### 💾 Arthemy Savers
 
 Once you have tuned your model or text encoder state in memory, you can use the **Z-Image Saver** or **Qwen Saver** nodes to serialize your changes into a standalone `.safetensors` file, ready to be loaded in other workflows.
-
----
-
-This updated description clarifies why the specialized loader is essential for the Z-Image model but optional for Qwen, emphasizing the technical distinction between "in-place" weight modification and patching.
 
 ---
 
