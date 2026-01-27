@@ -35,28 +35,38 @@ The 30 layers of the model are divided into **6 Positional Blocks** (5 layers pe
 You can push or pull the weights of these blocks relative to the `base_strength`.
 
 * **Block 1 (Start 00-04):** Initial composition.
+![Arthemy Tuner ZIT Interface](assets/Block_1_start.jpg)
 * **Block 2 (Early 05-09):** Early feature definition.
+![Arthemy Tuner ZIT Interface](assets/Block_2_early.jpg)
 * **Block 3 (Mid 10-14):** Mid-level structure.
+![Arthemy Tuner ZIT Interface](assets/Block_3_mid.jpg)
 * **Block 4 (Core 15-19):** Core processing.
+![Arthemy Tuner ZIT Interface](assets/Block_4_core.jpg)
 * **Block 5 (Late 20-24):** High-level details.
+![Arthemy Tuner ZIT Interface](assets/Block_5_late.jpg)
 * **Block 6 (End 25-29):** Final output resolution.
+![Arthemy Tuner ZIT Interface](assets/Block_6_end.jpg)
 
 **B. Global Components**
 Instead of affecting layers blindly, you can scale specific internal mechanisms across the entire model:
 
 * **Global Attention:** Scales the Attention mechanisms. This impacts how the model relates different parts of the image to each other.
+* ![Arthemy Tuner ZIT Interface](assets/Global_attention.jpg)
 * **Global MLP:** Scales the Feed-Forward networks. This impacts the processing power of the individual nodes.
+* ![Arthemy Tuner ZIT Interface](Global_Mlp.jpg)
 
 **C. Auxiliary Models**
 These controls target weights that exist outside the main 30-layer stack:
 
 * **Embedders Strength:** Scales the internal embedding layers. This controls how strong the initial signal injection is before it enters the main layers.
+* ![Arthemy Tuner ZIT Interface](assets/Embedders_strength.jpg)
 * **Refiners Strength:** Scales the dedicated refinement weights, often responsible for noise handling or context refining.
+* ![Arthemy Tuner ZIT Interface](assets/refiners_strength.jpg)
 
 **⚠️ Safety Toggle:**
 
 * **Unsafe Tune Normalization:** By default, this is **OFF** (Locked). Normalization layers stabilize the neural network; scaling them (changing their math) often leads to artifacts or "fried" images. Enable this only if you want to deliberately break the model's stability.
-* 
+
 ---
 
 ## 🧪 Qwen Tuner (Simple)
@@ -64,11 +74,17 @@ These controls target weights that exist outside the main 30-layer stack:
 The Qwen3-4B text encoder has 36 layers. The v2.0 Tuner organizes these into **6 Semantic Zones** (6 layers per zone), moving from raw embedding to abstract reasoning.
 
 * **Zone 1 (Layers 00-05):** Embedding & Tokenization
+![Arthemy Tuner ZIT Interface](assets/Zone_1_Embedding.jpg)
 * **Zone 2 (Layers 06-11):** Low-Level Syntax
+![Arthemy Tuner ZIT Interface](assets/Zone_2_Syntax_Low.jpg)
 * **Zone 3 (Layers 12-17):** High-Level Syntax
+![Arthemy Tuner ZIT Interface](assets/Zone_3_Syntax_High.jpg)
 * **Zone 4 (Layers 18-23):** Semantics
+![Arthemy Tuner ZIT Interface](assets/Zone_4_Semantics.jpg)
 * **Zone 5 (Layers 24-29):** Contextual Logic
+![Arthemy Tuner ZIT Interface](assets/Zone_5_Context.jpg)
 * **Zone 6 (Layers 30-35):** Abstract Reasoning
+![Arthemy Tuner ZIT Interface](assets/Zone_6_Abstract.jpg)
 
 Adjusting these allows you to influence how strictly the model adheres to grammar versus how freely it interprets the "vibe" of your prompt.
 
