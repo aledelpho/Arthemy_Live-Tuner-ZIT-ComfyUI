@@ -1,7 +1,7 @@
 [project]
 name = "arthemy_live-tuner-zit-comfyui"
 description = "Advanced real-time control for Z-Image models and Qwen3-4B Text Encoders. These nodes allow you to change your model's weights to boost or lower specific generative phases."
-version = "1.0.0"
+version = "2.0.0"
 license = {file = "LICENSE"} 
 # classifiers = [
 #     # For OS-independent nodes (works on all operating systems)
