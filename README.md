@@ -1,16 +1,20 @@
-# Arthemy Live Tuner Z-Image • ComfyUI nodes
+# Arthemy Z-Image and Qwen Tuner
 
-Advanced real-time control for **Z-Image** (S3-DiT) models and **Qwen3-4B** Text Encoders. These nodes perform "live surgery" on your model's weights to boost or lower specific generative phases without any training.
+Advanced real-time control for **Z-Image** models and **Qwen3-4B** Text Encoders. These nodes perform "live surgery" on your model's weights to boost or lower specific generative phases without any training.
+
+```
+UPDATE 2.0.0 
+The nodes have been completely reworked in order to solve many... many issues. Now they works as intended and you can also save your tuned z-image models and text-encoders.
+```
 
 ![Arthemy Tuner ZIT Interface](assets/Presentation-ArthemyLiveTunerZIT.webp)
----
 
-# ✨ Arthemy Live Tuner - Z-Image (standard version)
+---
 
 Hi everyone!
 
 I developed these nodes to slice the monolithic **S3-DiT** of **Z-Image** to give you more control over different slices of both the Model and Text Encoder.
-This transform your **Z-Image** checkpoint into a set of "Sliders," allowing you to tweak composition, lighting, or micro-details in real-time.
+This transform your **Z-Image** model into a set of "Sliders," allowing you to tweak composition, lighting, or micro-details in real-time.
 
 You can finally **play with the models**!
 
@@ -23,106 +27,86 @@ Prompt for the examples:
 An oil painting in a first-person perspective, looking down at a slender, amethyst-purple hand with elegant black nails. The hand holds a jagged shard of a broken mirror, reflecting the face of a dark elf princess with glowing eyes, a sheer white veil, and obsidian horns. The background is a busy, dimly lit tavern with warm, golden light filtering through smoke, filled with diverse fantasy characters and blurred, bustling figures. The brushstrokes are visible, giving the image a rich, textured, old-world feel.
 ```
 
-## Model Tuner: The 5 Generative Stages
+## 1. Z-Image Tuner (Simple)
 
-Z-Image doesn't have "Input" or "Output" blocks. Instead, it uses a flat stack of **30 identical layers**. I’ve organized these into **5 Functional Stages**:
+The 30 layers of the model are divided into **6 Positional Blocks** (5 layers per block), plus controls for the auxiliary components that wrap around the main transformer.
 
-### STAGE 1: Semantic Seeding (Layers 0-5)
+**A. The Main Stack (Positional Blocks)**
+You can push or pull the weights of these blocks relative to the `base_strength`.
 
-* **The Foundation:** Where random noise first meets your prompt.
-- Crank this up to force the model to stick rigidly to your prompt's layout. Lower it for more creative drift.
-![Stage 1 Semantic Seeding](assets/STAGE%201%20-%20Semantic%20Seeding.webp)
+* **Block 1 (Start 00-04):** Initial composition.
+* **Block 2 (Early 05-09):** Early feature definition.
+* **Block 3 (Mid 10-14):** Mid-level structure.
+* **Block 4 (Core 15-19):** Core processing.
+* **Block 5 (Late 20-24):** High-level details.
+* **Block 6 (End 25-29):** Final output resolution.
 
-### STAGE 2: Spatial Layout (Layers 6-11)
+**B. Global Components**
+Instead of affecting layers blindly, you can scale specific internal mechanisms across the entire model:
 
-* **The Blueprint:** Defines masses, object positioning, and depth.
-- Adjust where subjects are placed and their overall "weight" in the scene.
-![Stage 2 Spatial Layout](assets/STAGE%202%20-%20Spatial%20Layout.webp)
+* **Global Attention:** Scales the Attention mechanisms. This impacts how the model relates different parts of the image to each other.
+* **Global MLP:** Scales the Feed-Forward networks. This impacts the processing power of the individual nodes.
 
-### STAGE 3: Morphological Form (Layers 12-17)
+**C. Auxiliary Models**
+These controls target weights that exist outside the main 30-layer stack:
 
-* **The Skeleton:** Resolves object boundaries and limb coherence.
-- High values separate objects clearly; low values create "dream-like" blending.
-![Stage 3 Morphological Form](assets/STAGE%203%20-%20Morphological%20Form.webp)
+* **Embedders Strength:** Scales the internal embedding layers. This controls how strong the initial signal injection is before it enters the main layers.
+* **Refiners Strength:** Scales the dedicated refinement weights, often responsible for noise handling or context refining.
 
-### STAGE 4: Volumetric Lighting (Layers 18-23)
+**⚠️ Safety Toggle:**
 
-* **The Atmosphere:** Handles 3D depth, shading, and lighting mood.
-- Influence the contrast and "feel" of the environment.
-![Stage 4 Volumetric Lighting](assets/STAGE%204%20-%20Volumetric%20Lighting.webp)
+* **Unsafe Tune Normalization:** By default, this is **OFF** (Locked). Normalization layers stabilize the neural network; scaling them (changing their math) often leads to artifacts or "fried" images. Enable this only if you want to deliberately break the model's stability.
+* 
+---
 
-### STAGE 5: Surface Refinement (Layers 24-29)
+## 2. Qwen Tuner (Simple)
 
-* **The Detailer:** "Hallucinates" micro-details like skin pores and fabric weave.
-- Crank it for ultra-sharp textures; lower it for a soft, painterly look.
-![Stage 5 Surface Refinements](assets/STAGE%205%20-%20Surface%20Refinements.webp)
+The Qwen3-4B text encoder has 36 layers. The v2.0 Tuner organizes these into **6 Semantic Zones** (6 layers per zone), moving from raw embedding to abstract reasoning.
+
+* **Zone 1 (Layers 00-05):** Embedding & Tokenization
+* **Zone 2 (Layers 06-11):** Low-Level Syntax
+* **Zone 3 (Layers 12-17):** High-Level Syntax
+* **Zone 4 (Layers 18-23):** Semantics
+* **Zone 5 (Layers 24-29):** Contextual Logic
+* **Zone 6 (Layers 30-35):** Abstract Reasoning
+
+Adjusting these allows you to influence how strictly the model adheres to grammar versus how freely it interprets the "vibe" of your prompt.
 
 ---
 
-## Qwen Tuner: Language Abstraction
+## ⚗️ Arthemy LAB Versions
 
-Z-Image uses **Qwen3-4B**, a 36-layer LLM, as its text encoder. This node lets you adjust how the model "thinks" about your prompt:
+For those who want to look under the hood.
 
-* **Syntax Parsing**: Controls how strictly the AI follows your grammar and word order.
-![LLM Syntax Parsing](assets/LLM%20-%20Syntax%20Parsing.webp)
+The **LAB** versions of these nodes discard the groupings entirely. They expose:
 
-* **Literal Meaning**: Controls the direct association between words and objects.
-![LLM Literal Meaning](assets/LLM%20-%20Literal%20Meaning.webp)
+1. **Layers 00-29** individually for the Z-Image Model.
+2. **Layers 00-35** individually for the Qwen Text Encoder.
 
-* **Contextual Web**: Manages the relationships and interactions between subjects.
- ![LLM Contextual Web](assets/LLM%20-%20Contextual%20Web.webp)
-
-* **Abstract Concept**: Controls the overall artistic style and subtext interpretation.
-![LLM Abstract Concept](assets/LLM%20-%20Abstract%20Concept.webp)
+This is intended for research and fine-tuning. If you want to discover exactly which layer controls "lighting" or "texture" for a specific seed, this is where you experiment.
 
 ---
 
-## ⚗️ Arthemy Live Tuner - Z-Image  (LAB version)
+### 💾 Arthemy Savers
 
-BUT WAIT, there's more!
-![LLM Abstract Concept](assets/LAB-ArthemyLiveTunerZIT.webp)
-The Lab version of these models keep the same nomenclature of the standard version, in order to help you identify to what group each layer has been assigned to, but it exposes all the layers of both the Model and Qwen to give you complete granular control.
-If you're one of those people that want to help me understand what's inside each slice in order to make these tools more reliable and effective... you're welcome to delve into this version.
+Once you have tuned your model or text encoder state in memory, you can use the **Z-Image Saver** or **Qwen Saver** nodes to serialize your changes into a standalone `.safetensors` file, ready to be loaded in other workflows.
 
 ---
 
-### **Tuning Modes: Real Value & Soft Value**
-
-The Arthemy Live Tuner nodes offer two distinct mathematical modes to control how your slider movements actually translate into weight changes. Understanding these is key to mastering the "God Mode" injection without breaking the model.
-
-#### **1. Real Value (Direct & Aggressive)**
-
-In this mode, the slider value is used as a **direct linear multiplier**.
-
-* **Multiplier:** If you set a slider to `1.20`, the weights are multiplied exactly by `1.20`.
-* **Sensitivity:** Because Z-Image V14 uses "Total War" recursive scaling (input * output), this mode is extremely sensitive.
-* **Best For:** Experienced users performing deep, structural changes or those looking to push the model to its absolute limits. Small increments (e.g., `0.01` or `0.05`) are highly recommended here.
-
-#### **2. Soft Value (Organic & Safe)**
-
-This is the recommended mode for general artistic tuning. It uses a **non-linear quadratic curve** to make changes feel more natural.
-
-* **The Curve:** It implements a specific mathematical easing:
-* **Lowering Values ():** It follows a quadratic path () that creates a smoother, more organic reduction.
-* **Boosting Values ():** The power is significantly dampened (). This acts as a safety buffer, preventing the model from "exploding" into noise even if you crank the slider to `2.0`.
-* **Qwen Sensitivity:** For the **Qwen Text Tuner**, Soft Value is even more conservative ( to  range) because Large Language Models are famously fragile when their weights are modified.
-* **Best For:** Fine-tuning details, subtle lighting shifts, and surgical textural adjustments.
+This updated description clarifies why the specialized loader is essential for the Z-Image model but optional for Qwen, emphasizing the technical distinction between "in-place" weight modification and patching.
 
 ---
 
-## ⚡ Technical Note: Direct Injection Workaround
+## ⚠️ Arthemy Tuner Loader (Why you need it)
 
-Because standard patching is ignored by Z-Image loaders, these nodes use **Recursive Direct Weight Injection**. They talk directly to the tensors in your VRAM.
+**Required for Z-Image Tuning**
 
-### ⚠️ Potential Issues & Solutions
+This custom loader is critical for the **Z-Image Tuner**.
+Standard ComfyUI loaders cache models in your RAM to speed up generation. However, because the Z-Image Tuner modifies weights "in-place" (live editing the model in memory), using the standard loader causes your adjustments to accumulate. If you run the tuner twice, you might accidentally apply your changes *on top* of the previous changes, "frying" the model.
 
-* **Memory Corruption:** If ComfyUI crashes or is interrupted during generation, the model weights in VRAM (not the actual model, don't worry) might stay "scaled" (corrupted) because the restore step didn't finish.
-* **Fix:** Simply restart ComfyUI or reload your checkpoint to clear the VRAM.
+The **Arthemy Tuner Loader** forces a "clean refresh" from the disk every time you run the workflow. It ensures that every tuning session starts from the pristine, original model file, preventing "dirty cache" corruption.
 
-* **Chaining Nodes:** Using two Model Tuners in a row will cause conflicts. The second node will back up the already-modified weights of the first node, making it impossible to return to a "clean" 1.0 state.
-* **Fix:** Always use **only one** Model Tuner per workflow.
-
-* **Sensitivity:** This method is extremely powerful. Move sliders in tiny increments (e.g., 0.05). A value of 1.50 is often enough to completely "break" the image.
+For the **Qwen Text Encoder**, you do **not** need the custom Loader.
 
 ---
 
