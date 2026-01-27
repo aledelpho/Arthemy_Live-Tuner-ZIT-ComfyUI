@@ -29,7 +29,7 @@ Documentation = "https://github.com/aledelpho/Arthemy_Live-Tuner-ZIT-ComfyUI/wik
 "Bug Tracker" = "https://github.com/aledelpho/Arthemy_Live-Tuner-ZIT-ComfyUI/issues"
 
 [tool.comfy]
-PublisherId = ""
+PublisherId = "arthemy"
 DisplayName = "Arthemy_Live-Tuner-ZIT-ComfyUI"
 Icon = ""
 includes = [] 
