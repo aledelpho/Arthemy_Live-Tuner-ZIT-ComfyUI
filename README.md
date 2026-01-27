@@ -91,7 +91,7 @@ Adjusting these allows you to influence how strictly the model adheres to gramma
 ---
 
 But wait, there's more:
-![Arthemy Tuner ZIT Interface](FeaturesPresentation.webp)
+![Arthemy Tuner ZIT Interface](assets/FeaturesPresentation.webp)
 
 ## ⚗️ Arthemy LAB Versions
 
