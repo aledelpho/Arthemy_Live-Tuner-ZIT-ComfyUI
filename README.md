@@ -3,8 +3,8 @@
 Advanced real-time control for **Z-Image** models and **Qwen3-4B** Text Encoders. These nodes perform "live surgery" on your model's weights to boost or lower specific generative phases without any training.
 
 ```
-UPDATE 2.0.0 
-The nodes have been completely reworked in order to solve many... many issues. Now they works as intended and you can also save your tuned z-image models and text-encoders.
+UPDATE 2.2.0 
+Now compatible with Z-image Base
 ```
 
 ![Arthemy Tuner ZIT Interface](assets/ArthemytunerPresentation.webp)
